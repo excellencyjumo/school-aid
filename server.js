@@ -18,7 +18,7 @@ app.use(cors({
 
 app.get('/', (_req, res) => {
   responseHandler.success(res,200,{
-    message: 'Welcome to the Production Management API!'
+    message: 'Welcome to the Educational Support API!'
   })
 });
 
