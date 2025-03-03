@@ -1,0 +1,350 @@
+{
+	"info": {
+		"_postman_id": "f738ebee-024d-45ee-9a96-1aba42376c45",
+		"name": "school-aid",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "29882624",
+		"_collection_link": "https://galactic-comet-747486.postman.co/workspace/Team-Workspace~12ff75e4-a10c-435d-8868-1588bdd484ed/collection/29882624-f738ebee-024d-45ee-9a96-1aba42376c45?action=share&source=collection_link&creator=29882624"
+	},
+	"item": [
+		{
+			"name": "Register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"student@university.edu\",\r\n  \"password\": \"SecurePass123!\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:3000/api/v1/auth/register"
+			},
+			"response": [
+				{
+					"name": "User Registration",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"student@university.edu\",\r\n  \"password\": \"SecurePass123!\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:3000/api/v1/auth/register"
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Access-Control-Allow-Credentials",
+							"value": "true"
+						},
+						{
+							"key": "Authorization",
+							"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InN0dWRlbnRAdW5pdmVyc2l0eS5lZHUiLCJpYXQiOjE3NDA5NjQzMzEsImV4cCI6MTc0MDk2NzkzMX0._2TVqxKZdOdmVtO1qG63_NAZxEyncUvxhlcSKoQ-Bcs"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "212"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"d4-M6Ty3uzBUEcO63AmbCmTphoVrGU\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 03 Mar 2025 01:12:11 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": \"success\",\n    \"data\": {\n        \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InN0dWRlbnRAdW5pdmVyc2l0eS5lZHUiLCJpYXQiOjE3NDA5NjQzMzEsImV4cCI6MTc0MDk2NzkzMX0._2TVqxKZdOdmVtO1qG63_NAZxEyncUvxhlcSKoQ-Bcs\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"student@university.edu\",\r\n  \"password\": \"SecurePass123!\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:3000/api/v1/auth/login"
+			},
+			"response": [
+				{
+					"name": "User Login",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"student@university.edu\",\r\n  \"password\": \"SecurePass123!\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:3000/api/v1/auth/login"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Access-Control-Allow-Credentials",
+							"value": "true"
+						},
+						{
+							"key": "Authorization",
+							"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InN0dWRlbnRAdW5pdmVyc2l0eS5lZHUiLCJpYXQiOjE3NDA5NjQ3NzgsImV4cCI6MTc0MDk2ODM3OH0.t65-RV6v8MQ3HhKVg5Kfk0xSuS8ZCW7NSb7DogPePoY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "212"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"d4-5h/h2QbcnIDjta0/nSHAI3tKEkQ\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 03 Mar 2025 01:19:38 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": \"success\",\n    \"data\": {\n        \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InN0dWRlbnRAdW5pdmVyc2l0eS5lZHUiLCJpYXQiOjE3NDA5NjQ3NzgsImV4cCI6MTc0MDk2ODM3OH0.t65-RV6v8MQ3HhKVg5Kfk0xSuS8ZCW7NSb7DogPePoY\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Create Summary",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InN0dWRlbnRAdW5pdmVyc2l0eS5lZHUiLCJpYXQiOjE3NDA5NjQzMzEsImV4cCI6MTc0MDk2NzkzMX0._2TVqxKZdOdmVtO1qG63_NAZxEyncUvxhlcSKoQ-Bcs"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"filename\": \"history-lecture-5.pdf\",\r\n  \"content\": \"The French Revolution was a period of radical political and societal change...\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:3000/api/v1/summaries"
+			},
+			"response": [
+				{
+					"name": "Create Summary",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"filename\": \"history-lecture-5.pdf\",\r\n  \"content\": \"The French Revolution was a period of radical political and societal change...\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:3000/api/v1/summaries"
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Access-Control-Allow-Credentials",
+							"value": "true"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "337"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"151-xYOihG2/eGnM62I5SalLXOW2MEg\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 03 Mar 2025 01:15:26 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": \"success\",\n    \"data\": {\n        \"summary\": {\n            \"id\": \"7f4d407b-a96f-45b0-913b-3a44984b39f9\",\n            \"filename\": \"history-lecture-5.pdf\",\n            \"content\": \"The French Revolution was a period of radical political and societal change...\",\n            \"userId\": \"879213b9-a0ae-48db-b403-af14d556cf21\",\n            \"createdAt\": \"2025-03-03T01:15:25.721Z\",\n            \"updatedAt\": \"2025-03-03T01:15:25.721Z\"\n        }\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Get Summaries",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InN0dWRlbnRAdW5pdmVyc2l0eS5lZHUiLCJpYXQiOjE3NDA5NjQzMzEsImV4cCI6MTc0MDk2NzkzMX0._2TVqxKZdOdmVtO1qG63_NAZxEyncUvxhlcSKoQ-Bcs"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:3000/api/v1/summaries"
+			},
+			"response": [
+				{
+					"name": "Get Summaries",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:3000/api/v1/summaries"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Access-Control-Allow-Credentials",
+							"value": "true"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "223"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"df-hK+JyL+eehZDq/CILiQkyD4r9aM\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 03 Mar 2025 01:15:23 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": \"success\",\n    \"data\": {\n        \"results\": 1,\n        \"data\": {\n            \"summaries\": [\n                {\n                    \"id\": \"f531edf8-d39e-46e9-a941-3823e78af793\",\n                    \"filename\": \"history-lecture-5.pdf\",\n                    \"createdAt\": \"2025-03-03T01:13:16.707Z\",\n                    \"updatedAt\": \"2025-03-03T01:13:16.707Z\"\n                }\n            ]\n        }\n    }\n}"
+				}
+			]
+		}
+	]
+}

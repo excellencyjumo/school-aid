@@ -1,0 +1,60 @@
+const { PrismaClient } = require('@prisma/client');
+const prisma = new PrismaClient();
+const bcrypt = require('bcrypt');
+const AppError = require('../utils/appError');
+const catchAsync = require('../utils/catchAsync');
+const responseHandler = require('../utils/responseHandler');
+const { signToken } = require('../utils/jwtHelperFn');
+
+exports.register = catchAsync(async (req, res, next) => {
+    const { email, password } = req.body;
+
+    if(!email || !password) {
+        return next(new AppError('Email and password are required', 400));
+    }
+
+    const existingUser = await prisma.user.findUnique({ where: { email } });
+    if (existingUser) {
+      return next(new AppError('User already exists with this email', 400));
+    }
+  
+    const hashedPassword = await bcrypt.hash(password, 12);
+    
+    const newUser = await prisma.user.create({
+      data: {
+        email,
+        password: hashedPassword,
+      }
+    });
+  
+    const token = signToken(newUser.email);
+    res.setHeader("Authorization", `Bearer ${token}`);
+    responseHandler.success(res, 201, { newUser, token });
+});
+
+exports.login = catchAsync(async (req, res, next) => {
+  const { email, password } = req.body;
+
+  if(!email || !password) {
+    return next(new AppError('Email and password are required', 400));
+  }
+
+  const user = await prisma.user.findUnique({ where: { email } });
+  if (!user) {
+    return next(new AppError('Invalid email or password', 401));
+  }
+
+  const validPassword = await bcrypt.compare(password, user.password);
+  if (!validPassword) {
+    return next(new AppError('Invalid email or password', 401));
+  }
+
+  const token = signToken(user.email);
+  res.setHeader("Authorization", `Bearer ${token}`);
+  responseHandler.success(res, 200, { role: user.role, token });
+});
+
+exports.logout = catchAsync(async (_req, res, _next) => {
+  res.setHeader('Authorization', ''); 
+  responseHandler.success(res, 200, { message: 'Logged out successfully' });
+});
